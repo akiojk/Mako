@@ -25,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280310B715147334007F29D4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = "zh-Hans"; path = "zh-Hans.lproj/MainMenu.xib"; sourceTree = "<group>"; };
+		280310B91514746C007F29D4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ja; path = ja.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		280310BA151474D8007F29D4 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = "zh-Hans"; path = "zh-Hans.lproj/Credits.rtf"; sourceTree = "<group>"; };
+		280310BB15147500007F29D4 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = ja; path = ja.lproj/Credits.rtf; sourceTree = "<group>"; };
 		283445451504B6BC0034F358 /* Mako.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mako.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		283445491504B6BC0034F358 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2834454C1504B6BC0034F358 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -174,6 +178,8 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
+				ja,
 			);
 			mainGroup = 2834453A1504B6BC0034F358;
 			productRefGroup = 283445461504B6BC0034F358 /* Products */;
@@ -229,6 +235,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				283445591504B6BC0034F358 /* en */,
+				280310BA151474D8007F29D4 /* zh-Hans */,
+				280310BB15147500007F29D4 /* ja */,
 			);
 			name = Credits.rtf;
 			sourceTree = "<group>";
@@ -237,6 +245,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				2834455F1504B6BC0034F358 /* en */,
+				280310B715147334007F29D4 /* zh-Hans */,
+				280310B91514746C007F29D4 /* ja */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
