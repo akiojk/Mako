@@ -13,6 +13,15 @@
 		2834455A1504B6BC0034F358 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 283445581504B6BC0034F358 /* Credits.rtf */; };
 		2834455D1504B6BC0034F358 /* MFWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2834455C1504B6BC0034F358 /* MFWAppDelegate.m */; };
 		283445601504B6BC0034F358 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2834455E1504B6BC0034F358 /* MainMenu.xib */; };
+		283445681504B9860034F358 /* ScriptingBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 283445671504B9850034F358 /* ScriptingBridge.framework */; };
+		2834456A1504BA200034F358 /* 31-ipod.png in Resources */ = {isa = PBXBuildFile; fileRef = 283445691504BA200034F358 /* 31-ipod.png */; };
+		283445751504BE9C0034F358 /* MerryStatusScrollerTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 283445701504BE9C0034F358 /* MerryStatusScrollerTextView.m */; };
+		283445761504BE9C0034F358 /* MerryStatusScrollerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 283445721504BE9C0034F358 /* MerryStatusScrollerView.m */; };
+		283445771504BE9C0034F358 /* MerryStatusScrollerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 283445741504BE9C0034F358 /* MerryStatusScrollerController.m */; };
+		2834459C1504CFF70034F358 /* 31-ipod_inv.png in Resources */ = {isa = PBXBuildFile; fileRef = 2834459B1504CFF70034F358 /* 31-ipod_inv.png */; };
+		2834459E1504D3FE0034F358 /* MerryNightmare.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2834459D1504D3FE0034F358 /* MerryNightmare.icns */; };
+		28DAF2A21508C88C00F7EA1D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28DAF2A11508C88C00F7EA1D /* CoreServices.framework */; };
+		28ECA7B0150AED020022408E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28ECA7AF150AED020022408E /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,14 +30,27 @@
 		2834454C1504B6BC0034F358 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		2834454D1504B6BC0034F358 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		2834454E1504B6BC0034F358 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		283445511504B6BC0034F358 /* Mako-Info.plist */ = {isa = PBXFileReference; path = "Mako-Info.plist"; sourceTree = "<group>"; };
+		283445511504B6BC0034F358 /* Mako-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Mako-Info.plist"; sourceTree = "<group>"; };
 		283445531504B6BC0034F358 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		283445551504B6BC0034F358 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		283445571504B6BC0034F358 /* Mako-Prefix.pch */ = {isa = PBXFileReference; path = "Mako-Prefix.pch"; sourceTree = "<group>"; };
+		283445571504B6BC0034F358 /* Mako-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Mako-Prefix.pch"; sourceTree = "<group>"; };
 		283445591504B6BC0034F358 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		2834455B1504B6BC0034F358 /* MFWAppDelegate.h */ = {isa = PBXFileReference; path = MFWAppDelegate.h; sourceTree = "<group>"; };
+		2834455B1504B6BC0034F358 /* MFWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MFWAppDelegate.h; sourceTree = "<group>"; };
 		2834455C1504B6BC0034F358 /* MFWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MFWAppDelegate.m; sourceTree = "<group>"; };
 		2834455F1504B6BC0034F358 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		283445661504B8B50034F358 /* iTunes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunes.h; sourceTree = "<group>"; };
+		283445671504B9850034F358 /* ScriptingBridge.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ScriptingBridge.framework; path = System/Library/Frameworks/ScriptingBridge.framework; sourceTree = SDKROOT; };
+		283445691504BA200034F358 /* 31-ipod.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "31-ipod.png"; sourceTree = "<group>"; };
+		2834456F1504BE9C0034F358 /* MerryStatusScrollerTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerryStatusScrollerTextView.h; sourceTree = "<group>"; };
+		283445701504BE9C0034F358 /* MerryStatusScrollerTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerryStatusScrollerTextView.m; sourceTree = "<group>"; };
+		283445711504BE9C0034F358 /* MerryStatusScrollerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerryStatusScrollerView.h; sourceTree = "<group>"; };
+		283445721504BE9C0034F358 /* MerryStatusScrollerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerryStatusScrollerView.m; sourceTree = "<group>"; };
+		283445731504BE9C0034F358 /* MerryStatusScrollerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerryStatusScrollerController.h; sourceTree = "<group>"; };
+		283445741504BE9C0034F358 /* MerryStatusScrollerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerryStatusScrollerController.m; sourceTree = "<group>"; };
+		2834459B1504CFF70034F358 /* 31-ipod_inv.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "31-ipod_inv.png"; sourceTree = "<group>"; };
+		2834459D1504D3FE0034F358 /* MerryNightmare.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MerryNightmare.icns; sourceTree = "<group>"; };
+		28DAF2A11508C88C00F7EA1D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
+		28ECA7AF150AED020022408E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28ECA7B0150AED020022408E /* QuartzCore.framework in Frameworks */,
+				28DAF2A21508C88C00F7EA1D /* CoreServices.framework in Frameworks */,
+				283445681504B9860034F358 /* ScriptingBridge.framework in Frameworks */,
 				2834454A1504B6BC0034F358 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +88,9 @@
 		283445481504B6BC0034F358 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				28ECA7AF150AED020022408E /* QuartzCore.framework */,
+				28DAF2A11508C88C00F7EA1D /* CoreServices.framework */,
+				283445671504B9850034F358 /* ScriptingBridge.framework */,
 				283445491504B6BC0034F358 /* Cocoa.framework */,
 				2834454B1504B6BC0034F358 /* Other Frameworks */,
 			);
@@ -82,6 +110,13 @@
 		2834454F1504B6BC0034F358 /* Mako */ = {
 			isa = PBXGroup;
 			children = (
+				283445661504B8B50034F358 /* iTunes.h */,
+				2834456F1504BE9C0034F358 /* MerryStatusScrollerTextView.h */,
+				283445701504BE9C0034F358 /* MerryStatusScrollerTextView.m */,
+				283445711504BE9C0034F358 /* MerryStatusScrollerView.h */,
+				283445721504BE9C0034F358 /* MerryStatusScrollerView.m */,
+				283445731504BE9C0034F358 /* MerryStatusScrollerController.h */,
+				283445741504BE9C0034F358 /* MerryStatusScrollerController.m */,
 				2834455B1504B6BC0034F358 /* MFWAppDelegate.h */,
 				2834455C1504B6BC0034F358 /* MFWAppDelegate.m */,
 				2834455E1504B6BC0034F358 /* MainMenu.xib */,
@@ -93,7 +128,10 @@
 		283445501504B6BC0034F358 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2834459B1504CFF70034F358 /* 31-ipod_inv.png */,
+				283445691504BA200034F358 /* 31-ipod.png */,
 				283445511504B6BC0034F358 /* Mako-Info.plist */,
+				2834459D1504D3FE0034F358 /* MerryNightmare.icns */,
 				283445521504B6BC0034F358 /* InfoPlist.strings */,
 				283445551504B6BC0034F358 /* main.m */,
 				283445571504B6BC0034F358 /* Mako-Prefix.pch */,
@@ -155,6 +193,9 @@
 				283445541504B6BC0034F358 /* InfoPlist.strings in Resources */,
 				2834455A1504B6BC0034F358 /* Credits.rtf in Resources */,
 				283445601504B6BC0034F358 /* MainMenu.xib in Resources */,
+				2834456A1504BA200034F358 /* 31-ipod.png in Resources */,
+				2834459C1504CFF70034F358 /* 31-ipod_inv.png in Resources */,
+				2834459E1504D3FE0034F358 /* MerryNightmare.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -167,6 +208,9 @@
 			files = (
 				283445561504B6BC0034F358 /* main.m in Sources */,
 				2834455D1504B6BC0034F358 /* MFWAppDelegate.m in Sources */,
+				283445751504BE9C0034F358 /* MerryStatusScrollerTextView.m in Sources */,
+				283445761504BE9C0034F358 /* MerryStatusScrollerView.m in Sources */,
+				283445771504BE9C0034F358 /* MerryStatusScrollerController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +251,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
@@ -288,6 +333,7 @@
 				283445651504B6BC0034F358 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
