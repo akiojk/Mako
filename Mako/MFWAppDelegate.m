@@ -15,7 +15,6 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {    
-    isAnimating = YES;
     userPaused = NO;
     
     [launchAtStartMenuItem setState: ([self appExistsInLoginItem] != nil) ? NSOnState : NSOffState];  
@@ -37,10 +36,12 @@
     
     if([iTunes playerState] != iTunesEPlSPlaying)
     {
+        shouldBeAnimating = NO;
         [scrollerController displayIconOnly];
     }
     else
-    {    
+    {   
+        shouldBeAnimating = YES;
         [self scrollForSongName: [currentTrack name] artist: [currentTrack artist]];
     }
     
@@ -59,17 +60,21 @@
     
     if([[info valueForKey: @"Player State"] isEqual: @"Stopped"])
     {
+        shouldBeAnimating = NO;
         [scrollerController displayIconOnly];
     }
     else if([[info valueForKey: @"Player State"] isEqual: @"Paused"])
     {
+        shouldBeAnimating = NO;
         [scrollerController pauseAnimation];
         currentSongPersistentID = [info valueForKey: @"PersistentID"];
     }
     else if([[info valueForKey: @"Player State"] isEqual: @"Playing"])
     {
-        if(isAnimating == YES)
+        if(userPaused == NO)
         {
+            shouldBeAnimating = YES;
+            
             if(![[info valueForKey: @"PersistentID"] isEqual: currentSongPersistentID])
             {
                 [self scrollForSongName: [info valueForKey: @"Name"] artist: [info valueForKey: @"Artist"]];
@@ -79,6 +84,8 @@
         }
         else
         {
+            shouldBeAnimating = NO;
+            
             if(![[info valueForKey: @"PersistentID"] isEqual: currentSongPersistentID])
             {
                 [self scrollForSongName: [info valueForKey: @"Name"] artist: [info valueForKey: @"Artist"]];
@@ -101,26 +108,20 @@
 
 - (IBAction) toggleAnimationEnabling:(id)sender
 {
-    if(isAnimating == YES)
+    userPaused = !([[self pauseAnimationMenuItem] state] == NSOnState); // This is current status. If currently NSOffState, user is intending to turn it ON.
+    
+    shouldBeAnimating = !userPaused;
+    
+    if(userPaused == YES)
     {       
-        //  [scrollerController stopAnimationAndIsEliminatingView: NO];
-        
+        [scrollerController pauseAnimation];
         [[self pauseAnimationMenuItem] setState: NSOnState];
         
-        [scrollerController pauseAnimation];
-        
-        isAnimating = NO;
     }
     else
     {
-        //[scrollerController startAnimationForString: stringToScroll];
-        
-        [[self pauseAnimationMenuItem] setState: NSOffState];
-        
         [scrollerController resumeAnimation];
-        
-        isAnimating = YES;
-        
+        [[self pauseAnimationMenuItem] setState: NSOffState];
     }
 }
 

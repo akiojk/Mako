@@ -21,6 +21,10 @@
         leftPaddingBeforePause = 5.0f;
         leftPaddingBeforeSlowDown = 24.0f;
         isAnimating = YES;
+        
+        gradient = [[NSGradient alloc] initWithStartingColor:[NSColor blackColor]
+                                                 endingColor:[NSColor clearColor]];        
+        
     }
     
     return self;
@@ -76,14 +80,12 @@
         [NSGraphicsContext saveGraphicsState];
         [[NSGraphicsContext currentContext] setCompositingOperation: NSCompositeDestinationOut];
         
-        NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor blackColor]
-                                                             endingColor:[NSColor clearColor]];
-        [gradient drawInRect: NSMakeRect(dirtyRect.origin.x, dirtyRect.origin.y, 5, dirtyRect.size.height) angle: 0];
+
+        [gradient drawInRect: NSMakeRect(dirtyRect.origin.x, dirtyRect.origin.y, 5, dirtyRect.size.height) 
+                       angle: 0];
         
-        NSGradient *gradient2 = [[NSGradient alloc] initWithStartingColor:[NSColor blackColor]
-                                                              endingColor:[NSColor clearColor]];
-        
-        [gradient2 drawInRect: NSMakeRect([self bounds].origin.x+[self bounds].size.width-5, [self bounds].origin.y, 5, [self bounds].size.height) angle: 180];
+        [gradient drawInRect: NSMakeRect([self bounds].origin.x+[self bounds].size.width-5, [self bounds].origin.y, 5, [self bounds].size.height) 
+                       angle: 180];
         
         [NSGraphicsContext restoreGraphicsState];
     }
@@ -122,6 +124,7 @@
     if(isAnimating == YES)
     {
         [self setNeedsDisplay:YES];
+        NSLog(@"drawing");
     }
 }
 

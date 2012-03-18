@@ -33,6 +33,8 @@
     NSString *aniString;
     
     NSTimer *pauseTimer;
+    
+    NSGradient *gradient;
 }
 
 

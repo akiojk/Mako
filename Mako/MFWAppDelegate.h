@@ -14,7 +14,7 @@
 {
     NSStatusItem *statusItem;
     MerryStatusScrollerController *scrollerController;
-    BOOL isAnimating;
+    BOOL shouldBeAnimating;
     NSString *stringToScroll;
     NSString *currentSongPersistentID;
     BOOL userPaused;

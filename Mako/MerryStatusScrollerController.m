@@ -26,8 +26,6 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
         
         scrollerView = [[MerryStatusScrollerView alloc] init];
         
-        
-        
         [scrollerView setParentStatusItem: _statusItem];
         [scrollerView setDropDownMenu: _menu];
         [scrollerView setIconImage: _icon inversedImage: _invicon];
@@ -35,7 +33,7 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
         [_statusItem setView: scrollerView];
         
         
-        aniTimer= [NSTimer scheduledTimerWithTimeInterval: 0.005 target:scrollerView selector:@selector(timerTick) userInfo:nil repeats:YES];
+        aniTimer= [NSTimer scheduledTimerWithTimeInterval: 0.01 target:scrollerView selector:@selector(timerTick) userInfo:nil repeats:YES];
         
         
     }
@@ -78,6 +76,8 @@ static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTime
     [scrollerView setFrameSize: defaultSize];
     
     [scrollerView buildAnimationForString: @"" withWidth:0.0 withFont: defaultFont];
+    
+    [scrollerView pauseAnimation];
 }
 
 
