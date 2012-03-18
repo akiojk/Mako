@@ -28,8 +28,6 @@
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-
-    
     if(isMenuVisible)
     {
         [parentStatusItem drawStatusBarBackgroundInRect:dirtyRect withHighlight:YES];

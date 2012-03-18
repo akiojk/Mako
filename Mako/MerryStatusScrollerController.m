@@ -8,13 +8,6 @@
 
 #import "MerryStatusScrollerController.h"
 
-static CVReturn MyDisplayLinkCallback(CVDisplayLinkRef displayLink, const CVTimeStamp* now, const CVTimeStamp* outputTime, CVOptionFlags flagsIn, CVOptionFlags* flagsOut, void* displayLinkContext)
-{
-    CVReturn result = [(__bridge MerryStatusScrollerController*)displayLinkContext drawTheShit];
-    return result;
-}
-
-
 @implementation MerryStatusScrollerController
 
 - (id) initWithStatusItem: (NSStatusItem *) _statusItem withMenu: (NSMenu *) _menu withIcon: (NSImage *) _icon withIconInversed: (NSImage *) _invicon
