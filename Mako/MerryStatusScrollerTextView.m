@@ -23,7 +23,12 @@
         isAnimating = YES;
         
         gradient = [[NSGradient alloc] initWithStartingColor:[NSColor blackColor]
-                                                 endingColor:[NSColor clearColor]];        
+                                                 endingColor:[NSColor clearColor]];     
+        
+        shadow = [[NSShadow alloc] init];
+        [shadow setShadowColor: [NSColor colorWithCalibratedWhite:1.0 alpha:0.5]];
+        [shadow setShadowOffset: NSMakeSize(0.0, -1.5)];
+        [shadow setShadowBlurRadius: 1.0];
         
     }
     
@@ -55,6 +60,7 @@
                     withAttributes: (isMenuVisible ? defaultAttributesHighlighted : defaultAttributes)];
         }
     }
+    
     
     [aniString drawAtPoint: currentPoint 
             withAttributes: (isMenuVisible ? defaultAttributesHighlighted : defaultAttributes) ]; // draw 1st string
@@ -112,7 +118,7 @@
     
     currentPoint = NSMakePoint(leftPaddingBeforePause, 3);   
     
-    defaultAttributes = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [NSColor blackColor], NSForegroundColorAttributeName, nil];
+    defaultAttributes = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [NSColor blackColor], NSForegroundColorAttributeName, shadow, NSShadowAttributeName, nil];
     
     defaultAttributesHighlighted = [NSDictionary dictionaryWithObjectsAndKeys: font, NSFontAttributeName, [NSColor whiteColor], NSForegroundColorAttributeName, nil];
     
@@ -124,7 +130,7 @@
     if(isAnimating == YES)
     {
         [self setNeedsDisplay:YES];
-        NSLog(@"drawing");
+//        NSLog(@"drawing");
     }
 }
 

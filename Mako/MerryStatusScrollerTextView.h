@@ -35,6 +35,8 @@
     NSTimer *pauseTimer;
     
     NSGradient *gradient;
+    
+    NSShadow *shadow;
 }
 
 

@@ -7,7 +7,6 @@
 //
 
 #import "MFWAppDelegate.h"
-#import "iTunes.h"
 
 @implementation MFWAppDelegate
 
@@ -16,6 +15,10 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {    
     userPaused = NO;
+
+    isCoverFlowMenuItemAdded = NO;
+    
+    coverFlowMenuItem = [[NSMenuItem alloc] init];
     
     [launchAtStartMenuItem setState: ([self appExistsInLoginItem] != nil) ? NSOnState : NSOffState];  
     
@@ -29,10 +32,7 @@
     
     scrollerController = [[MerryStatusScrollerController alloc] initWithStatusItem: statusItem withMenu: menu withIcon: iconImage withIconInversed: iconInvImage];
     
-    iTunesApplication *iTunes = [SBApplication applicationWithBundleIdentifier: @"com.apple.iTunes"];
-    iTunesTrack *currentTrack = [iTunes currentTrack];
-    
-    NSLog(@"currentTrack: %@ - %@", [currentTrack name], [currentTrack artist]);
+    iTunes = [SBApplication applicationWithBundleIdentifier: @"com.apple.iTunes"];
     
     if([iTunes playerState] != iTunesEPlSPlaying)
     {
@@ -42,7 +42,8 @@
     else
     {   
         shouldBeAnimating = YES;
-        [self scrollForSongName: [currentTrack name] artist: [currentTrack artist]];
+        //        [self scrollForSongName: [currentTrack name] artist: [currentTrack artist]];
+        [self scrollForTrack: [iTunes currentTrack]];
     }
     
     
@@ -57,6 +58,8 @@
 {
     NSDictionary *info = [notification userInfo];
     NSLog(@"Info: %@", info);
+    
+    iTunesTrack *currentTrack = [iTunes currentTrack];
     
     if([[info valueForKey: @"Player State"] isEqual: @"Stopped"])
     {
@@ -77,7 +80,7 @@
             
             if(![[info valueForKey: @"PersistentID"] isEqual: currentSongPersistentID])
             {
-                [self scrollForSongName: [info valueForKey: @"Name"] artist: [info valueForKey: @"Artist"]];
+                [self scrollForTrack: currentTrack];
             }
             
             [scrollerController resumeAnimation];
@@ -88,13 +91,57 @@
             
             if(![[info valueForKey: @"PersistentID"] isEqual: currentSongPersistentID])
             {
-                [self scrollForSongName: [info valueForKey: @"Name"] artist: [info valueForKey: @"Artist"]];
+                [self scrollForTrack: currentTrack];
             }
             
             [scrollerController pauseAnimation];
         }
         
     }
+}
+
+- (void) scrollForTrack: (iTunesTrack *) track
+{
+    if([[[track artworks] get] count]) // if array is null, then count=nil
+    {
+        NSImage *coverFlowImage = [[NSImage alloc] initWithData: [(iTunesArtwork *)[[[track artworks] get] objectAtIndex:0] rawData]];
+        
+        MerryCoverFlowMenuItemView *coverFlowView;
+        
+        float coverFlowWidth = [menu size].width > 200 ? [menu size].width : 200;
+        
+        coverFlowView = [[MerryCoverFlowMenuItemView alloc] initWithFrame: NSMakeRect(0, 0, coverFlowWidth, [coverFlowImage size].height * (coverFlowWidth / [coverFlowImage size].width)) coverFlowImage: coverFlowImage];
+
+        
+        if(isCoverFlowMenuItemAdded)
+        {
+            [[menu itemAtIndex:0] setView: coverFlowView];
+        }
+        else
+        {
+            isCoverFlowMenuItemAdded = YES;
+
+            [coverFlowMenuItem setView: coverFlowView];
+            [menu insertItem: coverFlowMenuItem atIndex:0];
+            
+        }
+
+        [menu update];
+    }
+    else
+    {
+
+        if(isCoverFlowMenuItemAdded)
+        {
+            [menu removeItemAtIndex: 0];
+            isCoverFlowMenuItemAdded = NO;
+        }
+        
+        [menu update];
+    }
+    
+    [self scrollForSongName: [track name] artist: [track artist]];
+    
 }
 
 - (void) scrollForSongName: (NSString *) name artist:(NSString *) artist
@@ -140,7 +187,7 @@
 }
 
 
-   
+
 -(void) addAppAsLoginItem{
 	NSString * appPath = [[NSBundle mainBundle] bundlePath];
     
@@ -209,9 +256,9 @@
         
         LSSharedFileListItemRemove(loginItems, [self appExistsInLoginItem]);
     }
-
+    
 }
 
-        
-        
+
+
 @end

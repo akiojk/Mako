@@ -22,6 +22,8 @@
 		2834459E1504D3FE0034F358 /* MerryNightmare.icns in Resources */ = {isa = PBXBuildFile; fileRef = 2834459D1504D3FE0034F358 /* MerryNightmare.icns */; };
 		28DAF2A21508C88C00F7EA1D /* CoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28DAF2A11508C88C00F7EA1D /* CoreServices.framework */; };
 		28ECA7B0150AED020022408E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28ECA7AF150AED020022408E /* QuartzCore.framework */; };
+		5A62DFB4151FECC700401FF3 /* MerryCoverFlowMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A62DFB3151FECC700401FF3 /* MerryCoverFlowMenuItemView.m */; };
+		5AA42173152263EC00765525 /* MFWMakoMainController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AA42172152263EC00765525 /* MFWMakoMainController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,10 @@
 		2834459D1504D3FE0034F358 /* MerryNightmare.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = MerryNightmare.icns; sourceTree = "<group>"; };
 		28DAF2A11508C88C00F7EA1D /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = System/Library/Frameworks/CoreServices.framework; sourceTree = SDKROOT; };
 		28ECA7AF150AED020022408E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5A62DFB2151FECC700401FF3 /* MerryCoverFlowMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MerryCoverFlowMenuItemView.h; sourceTree = "<group>"; };
+		5A62DFB3151FECC700401FF3 /* MerryCoverFlowMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MerryCoverFlowMenuItemView.m; sourceTree = "<group>"; };
+		5AA42171152263EC00765525 /* MFWMakoMainController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MFWMakoMainController.h; sourceTree = "<group>"; };
+		5AA42172152263EC00765525 /* MFWMakoMainController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MFWMakoMainController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +129,10 @@
 				283445741504BE9C0034F358 /* MerryStatusScrollerController.m */,
 				2834455B1504B6BC0034F358 /* MFWAppDelegate.h */,
 				2834455C1504B6BC0034F358 /* MFWAppDelegate.m */,
+				5A62DFB2151FECC700401FF3 /* MerryCoverFlowMenuItemView.h */,
+				5A62DFB3151FECC700401FF3 /* MerryCoverFlowMenuItemView.m */,
+				5AA42171152263EC00765525 /* MFWMakoMainController.h */,
+				5AA42172152263EC00765525 /* MFWMakoMainController.m */,
 				2834455E1504B6BC0034F358 /* MainMenu.xib */,
 				283445501504B6BC0034F358 /* Supporting Files */,
 			);
@@ -217,6 +227,8 @@
 				283445751504BE9C0034F358 /* MerryStatusScrollerTextView.m in Sources */,
 				283445761504BE9C0034F358 /* MerryStatusScrollerView.m in Sources */,
 				283445771504BE9C0034F358 /* MerryStatusScrollerController.m in Sources */,
+				5A62DFB4151FECC700401FF3 /* MerryCoverFlowMenuItemView.m in Sources */,
+				5AA42173152263EC00765525 /* MFWMakoMainController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

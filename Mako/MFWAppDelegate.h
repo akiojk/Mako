@@ -7,8 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MerryStatusScrollerController.h"
 #import <CoreServices/CoreServices.h>
+#import "iTunes.h"
+#import "MerryCoverFlowMenuItemView.h"
+#import "MerryStatusScrollerController.h"
 
 @interface MFWAppDelegate : NSObject <NSApplicationDelegate>
 {
@@ -18,9 +20,13 @@
     NSString *stringToScroll;
     NSString *currentSongPersistentID;
     BOOL userPaused;
+    iTunesApplication *iTunes;
+    BOOL isCoverFlowMenuItemAdded;
+    NSMenuItem *coverFlowMenuItem;
 }
 
 - (void) scrollForSongName: (NSString *) name artist:(NSString *) artist;
+- (void) scrollForTrack: (iTunesTrack *) track;
 - (IBAction) toggleAnimationEnabling:(id)sender;
 - (IBAction) toggleLaunchAtStart:(id)sender;
 - (LSSharedFileListItemRef) appExistsInLoginItem;
