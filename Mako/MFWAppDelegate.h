@@ -23,6 +23,7 @@
     iTunesApplication *iTunes;
     BOOL isCoverFlowMenuItemAdded;
     NSMenuItem *coverFlowMenuItem;
+    float menuMinSize;
 }
 
 - (void) scrollForSongName: (NSString *) name artist:(NSString *) artist;

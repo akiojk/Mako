@@ -37,8 +37,6 @@
 
 - (void) resumeAnimation;
 
-- (CVReturn) drawTheShit;
-
 - (void) displayIconOnly;
 
 - (float) widthForStringDrawing: (NSString*) stringToDraw withFont: (NSFont *) stringFont;

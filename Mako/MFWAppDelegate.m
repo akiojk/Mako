@@ -18,6 +18,10 @@
 
     isCoverFlowMenuItemAdded = NO;
     
+    menuMinSize = 200.0f;
+    
+    [menu setMinimumWidth: menuMinSize];
+    
     coverFlowMenuItem = [[NSMenuItem alloc] init];
     
     [launchAtStartMenuItem setState: ([self appExistsInLoginItem] != nil) ? NSOnState : NSOffState];  
@@ -57,7 +61,7 @@
 - (void) changeTrack:(NSNotification *) notification
 {
     NSDictionary *info = [notification userInfo];
-    NSLog(@"Info: %@", info);
+    //NSLog(@"Info: %@", info);
     
     iTunesTrack *currentTrack = [iTunes currentTrack];
     
@@ -108,14 +112,22 @@
         
         MerryCoverFlowMenuItemView *coverFlowView;
         
-        float coverFlowWidth = [menu size].width > 200 ? [menu size].width : 200;
+        float coverFlowWidth = [menu size].width > menuMinSize ? [menu size].width : menuMinSize;
+
+        NSLog(@"coverFlowImageSize: %@", NSStringFromSize([coverFlowImage size]));
         
-        coverFlowView = [[MerryCoverFlowMenuItemView alloc] initWithFrame: NSMakeRect(0, 0, coverFlowWidth, [coverFlowImage size].height * (coverFlowWidth / [coverFlowImage size].width)) coverFlowImage: coverFlowImage];
+                
+                NSLog(@"coverFlowImageSize2: %@", NSStringFromSize([coverFlowImage size]));
+        
+        NSLog(@"coverflowWidth: %f", coverFlowWidth);
+        
+        coverFlowView = [[MerryCoverFlowMenuItemView alloc] initWithFrame: NSMakeRect(0, 0, [menu size].width, [coverFlowImage size].height * ([menu size].width / [coverFlowImage size].width)) coverFlowImage: coverFlowImage];
 
         
         if(isCoverFlowMenuItemAdded)
         {
-            [[menu itemAtIndex:0] setView: coverFlowView];
+            [[menu itemAtIndex:0] setView: coverFlowView];         
+            [coverFlowView setNeedsDisplay: YES];
         }
         else
         {
@@ -124,6 +136,7 @@
             [coverFlowMenuItem setView: coverFlowView];
             [menu insertItem: coverFlowMenuItem atIndex:0];
             
+            [coverFlowView setFrameSize: NSMakeSize([menu size].width, [menu size].width * [coverFlowView frame].size.height / [coverFlowView frame].size.width)];
         }
 
         [menu update];

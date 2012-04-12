@@ -35,12 +35,6 @@
     
 }
 
-- (CVReturn) drawTheShit
-{
-    [scrollerView timerTick];
-    
-    return kCVReturnSuccess;
-}
 
 
 - (void) startAnimationForString: (NSString *) specifiedAniString
